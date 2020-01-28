@@ -11,8 +11,7 @@ const Search = () => {
   const [document, setDocument] = useState("");
 
   useEffect(() => {
-    console.log(`you entered ${input}`);
-
+    // componentDidMount
     axios
       .post("http://localhost:4000/search", {
         type: type,
@@ -29,11 +28,7 @@ const Search = () => {
         console.log(newSuggestions);
         setSuggestions(newSuggestions);
       });
-  }, [input]);
-
-  useEffect(() => {
-    console.log(`doc change ${document}`);
-  }, [document]);
+  }, []);
 
   const handleOnSubmit = e => {
     e.preventDefault();
@@ -41,10 +36,29 @@ const Search = () => {
   };
 
   const handleOnInputChange = value => {
-    setInput(value);
+    console.log(value);
+    // setInput(value);
+
+    axios
+      .post("http://localhost:4000/search", {
+        type: type,
+        text: value
+      })
+      .then(res => {
+        const newSuggestions = res.data.documents.map(doc => {
+          return {
+            label: doc.shortTitle,
+            value: doc.title,
+            id: doc.id
+          };
+        });
+        console.log(newSuggestions);
+        setSuggestions(newSuggestions);
+      });
   };
 
   const handleOnSelectChange = doc => {
+    console.log(doc);
     setDocument(doc.value);
   };
 

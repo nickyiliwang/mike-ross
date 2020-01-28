@@ -1,16 +1,17 @@
-import React from "react";
-import './setup.css'
+import React, { useState } from "react";
+import "./setup.css";
 import "./App.css";
 import Search from "./components/Search";
+import DisplayDocuments from "./components/DisplayDocuments";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
-class App extends React.Component {
-  render() {
-    return (
-      <div>
-        <Search />
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <Router>
+      <Search />
+      <DisplayDocuments />
+    </Router>
+  );
+};
 
 export default App;

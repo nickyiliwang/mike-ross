@@ -1,73 +1,45 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import Select, { components } from "react-select";
 
-const Search = () => {
-  const [input, setInput] = useState("good faith");
+const Search = props => {
+  const [input, setInput] = useState("");
   const [type, setType] = useState("keyword");
-  const [suggestions, setSuggestions] = useState([
-    { value: "loading", label: "loading" }
-  ]);
-  const [document, setDocument] = useState("");
 
-  useEffect(() => {
-    console.log(`you entered ${input}`);
-
+  const handleOnSubmit = e => {
+    e.preventDefault();
+    console.log("submitted");
     axios
       .post("http://localhost:4000/search", {
         type: type,
         text: input
       })
       .then(res => {
-        const newSuggestions = res.data.documents.map(doc => {
-          return {
-            label: doc.shortTitle,
-            value: doc.title,
-            id: doc.id
-          };
-        });
-        console.log(newSuggestions);
-        setSuggestions(newSuggestions);
+        console.log(res);
       });
-  }, [input]);
-
-  useEffect(() => {
-    console.log(`doc change ${document}`);
-  }, [document]);
-
-  const handleOnSubmit = e => {
-    e.preventDefault();
-    console.log("submit");
+    setInput("");
   };
 
-  const handleOnInputChange = value => {
-    setInput(value);
+  const handleOnInputChange = e => {
+    setInput(e.target.value);
   };
 
-  const handleOnSelectChange = doc => {
-    setDocument(doc.value);
-  };
-
-  // dropdown
   const handleDropdownOnChange = e => {
     setType(e.target.value);
     console.log(type);
   };
 
-  // using the react-select component we can add a maxLength prop
-  const Input = props => <components.Input {...props} maxLength={200} />;
-
   return (
     <div className="search-bar">
-      <Select
-        className="search-input"
-        onInputChange={value => handleOnInputChange(value)}
-        onChange={value => handleOnSelectChange(value)}
-        options={suggestions}
-        placeholder="good faith"
-        components={{ Input }}
-      />
       <form onSubmit={handleOnSubmit}>
+        <input
+          type="text"
+          name="text"
+          value={input}
+          className="text-input"
+          onChange={handleOnInputChange}
+          maxLength={200}
+        />
+
         <select
           onChange={handleDropdownOnChange}
           name="search-type"
