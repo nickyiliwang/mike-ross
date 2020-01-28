@@ -6,6 +6,7 @@
   "author": "Mike Dedys",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.19.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
@@ -15,6 +16,6 @@
     "parcel-bundler": "^1.12.4"
   },
   "scripts": {
-    "serve": "parcel index.html"
+    "serve": "parcel ./src/index.html"
   }
 }
