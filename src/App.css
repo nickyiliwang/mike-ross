@@ -1,3 +1,40 @@
 body {
   background-color: red;
 }
+
+h1 {
+  font-family: Helvetica, sans-serif;
+  font-size: 24px;
+  color: #000000;
+}
+
+.select {
+  background: #dde5ea;
+  border-radius: 4px 4px 0px 0px;
+  font-size: 12px;
+  color: #2a228e;
+}
+
+/* not selected color: #4F5E64 */
+
+.select-box {
+  background: #ffffff;
+  border: 1px solid #dde5ea;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+}
+
+/* heading text */
+.heading-text {
+  font-weight: bold;
+  font-size: 16px;
+  color: #1a1a1a;
+}
+.metadata {
+  font-size: 12px;
+  color: #757575;
+}
+.passage-count {
+
+}
