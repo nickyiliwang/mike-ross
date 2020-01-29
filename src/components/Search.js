@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import SearchIcon from "../icons/search.svg";
 
 const Search = props => {
   const [input, setInput] = useState("");
@@ -8,6 +9,8 @@ const Search = props => {
   const handleOnSubmit = e => {
     e.preventDefault();
     console.log("submitted");
+    if (input === "") return;
+
     axios
       .post("http://localhost:4000/search", {
         type: type,
@@ -25,7 +28,6 @@ const Search = props => {
 
   const handleDropdownOnChange = e => {
     setType(e.target.value);
-    console.log(type);
   };
 
   return (
@@ -42,13 +44,17 @@ const Search = props => {
 
         <select
           onChange={handleDropdownOnChange}
-          name="search-type"
-          className="search-type"
+          name="dropdown"
+          className="dropdown"
         >
           <option value="keyword">Keyword</option>
           <option value="citation">Citation</option>
         </select>
-        <input type="submit" className="submit" />
+
+        <label>
+          <input className="search-submit" type="submit" value="" />
+          <img className="search-submit-icon" src={SearchIcon} />
+        </label>
       </form>
     </div>
   );

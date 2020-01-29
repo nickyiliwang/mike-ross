@@ -1,3 +1,24 @@
+FLOW:
+Greeted by : Search Page
+On input submit: go to Results/ Catalogue/ all results Page/ (Loading skeleton, carouse ...)
+Onclick to a single page (single page with copying and change fonts)
+
+
+
+
+TODO:
+GET IT DONE, DON'T SPEND TOO LONG ON FEATURE
+Header
+SearchBar with search Icon
+Loading skeleton
+
+
+
+
+
+
+
+
 # ROSS Mini Interview Question
 
 ## Requirements
@@ -6,7 +27,7 @@ Create an application where users can enter keywords and search for documents.
 
 The user must be able to do the following:
 
-- Enter a query up to a maxiumum of 200 characters
+- Enter a query up to a maximum of 200 characters
   - Input field must dynamically grow and shrink
 
 - Switch between two types of search: `keyword` and `citation`

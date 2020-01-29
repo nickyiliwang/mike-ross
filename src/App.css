@@ -1,11 +1,25 @@
 body {
-  background-color: red;
+  background-color: #f2f4f4;
+}
+
+.wrapper {
+  max-width: 1440px;
+  width: 80%;
+  margin: 0 auto;
 }
 
 h1 {
   font-family: Helvetica, sans-serif;
   font-size: 24px;
   color: #000000;
+  text-transform: uppercase;
+}
+
+.header-container {
+  text-align: center;
+  padding: 10px;
+  background: #ffffff;
+  box-shadow: 0px 2px 8px rgba(79, 94, 100, 0.1);
 }
 
 .select {
@@ -83,17 +97,54 @@ h1 {
   height: 6px;
 }
 
+/* Search bar */
 .search-bar {
   display: flex;
   justify-content: center;
 }
 
 .search-input {
-  width: 40%;
+  background: #ffffff;
+  border-radius: 1.5px solid #dde5ea;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #444444;
 }
 
-.wrapper {
-  max-width: 1440px;
-  width: 80%;
-  margin: 0 auto;
+.search-submit-icon {
+  background: #2a228e;
+  border-radius: 0px 8px 8px 0px;
+  height: 25px;
+  width: 30px;
+  padding: 4px;
+  margin: 0;
+  position: absolute;
+}
+
+.search-submit {
+  display: none;
+  height: 25px;
+}
+
+.dropdown {
+  background: #fafafa;
+  height: 25px;
+  border-radius: 0;
+  font-size: 14px;
+  color: #4f5e64;
+}
+
+/* single-doc */
+.single .title {
+  font-size: 18px;
+  color: #1a1a1a;
+}
+.single .metadata {
+  font-size: 12px;
+  color: #757575;
+}
+
+.single .passage {
+  font-size: 16px;
+  color: #1a1a1a;
 }

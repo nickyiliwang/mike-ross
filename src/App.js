@@ -2,19 +2,24 @@ import React, { useState } from "react";
 import "./setup.css";
 import "./App.css";
 import Header from "./components/Header";
-import Search from "./components/Search";
-import DisplayDocuments from "./components/DisplayDocuments";
+
+import SearchPage from "./pages/search-page";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
   return (
     <Router>
+      <Header />
       <div className="wrapper">
-        <Header />
         <Switch>
           <Route exact path="/">
-            <Search />
-            <DisplayDocuments />
+            <SearchPage />
+          </Route>
+          <Route path="/results">
+            <SearchPage />
+          </Route>
+          <Route path="/single">
+            <SearchPage />
           </Route>
         </Switch>
       </div>
