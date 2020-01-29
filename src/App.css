@@ -8,6 +8,10 @@ body {
   margin: 0 auto;
 }
 
+.header-link {
+  text-decoration: none;
+}
+
 h1 {
   font-family: Helvetica, sans-serif;
   font-size: 24px;

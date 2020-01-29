@@ -2,24 +2,35 @@ import React, { useState } from "react";
 import "./setup.css";
 import "./App.css";
 import Header from "./components/Header";
+import Search from "./components/Search";
+// pages
+import AllResultsPage from "./pages/all-results";
+import SingleResultPage from "./pages/single-doc";
 
-import SearchPage from "./pages/search-page";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
+  const [searchResults, setSearchResults] = useState([]);
+
+  const onSearchTermSubmit = res => {
+    console.log(`haha ${res}`);
+    setSearchResults(res);
+  };
+
   return (
     <Router>
       <Header />
       <div className="wrapper">
         <Switch>
           <Route exact path="/">
-            <SearchPage />
+            <Search onSearchTermSubmit={onSearchTermSubmit} />
           </Route>
           <Route path="/results">
-            <SearchPage />
+            <Search onSearchTermSubmit={onSearchTermSubmit} />
+            <AllResultsPage searchResults={searchResults} />
           </Route>
           <Route path="/single">
-            <SearchPage />
+            <SingleResultPage />
           </Route>
         </Switch>
       </div>

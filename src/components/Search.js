@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import SearchIcon from "../icons/search.svg";
+import { withRouter } from "react-router-dom";
 
 const Search = props => {
   const [input, setInput] = useState("");
@@ -8,7 +9,6 @@ const Search = props => {
 
   const handleOnSubmit = e => {
     e.preventDefault();
-    console.log("submitted");
     if (input === "") return;
 
     axios
@@ -17,9 +17,13 @@ const Search = props => {
         text: input
       })
       .then(res => {
-        console.log(res);
+        props.onSearchTermSubmit(res);
+
+
       });
+
     setInput("");
+    props.history.push(`/results`);
   };
 
   const handleOnInputChange = e => {
@@ -60,4 +64,4 @@ const Search = props => {
   );
 };
 
-export default Search;
+export default withRouter(Search);
