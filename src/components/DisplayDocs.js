@@ -3,15 +3,25 @@ import SingleDoc from "./SingleDoc";
 
 const DisplayDocs = ({ searchResults }) => {
   const renderSingleDocument = () => {
-    return searchResults.documents.map(doc => {
-      // shortTitle, date, citation, passages
-      const { id, ...restOfDocProps } = doc;
+    if (searchResults.documents[0]) {
+      return searchResults.documents.map(doc => {
+        const { id, ...restOfDocProps } = doc;
+        return (
+          <li className="single-doc" key={id}>
+            <SingleDoc id={id} {...restOfDocProps} />
+          </li>
+        );
+      });
+    } else {
       return (
-        <li className="single-doc" key={id}>
-          <SingleDoc {...restOfDocProps} />
-        </li>
+        <div>
+          <p>
+            Unfortunately we could not find any results. Please try another
+            search.
+          </p>
+        </div>
       );
-    });
+    }
   };
 
   return (

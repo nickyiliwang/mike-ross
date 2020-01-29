@@ -159,5 +159,47 @@ h1 {
 }
 
 .passage-text {
-  background: #f2f4f4;
+  height: 200px;
+}
+
+.passage-text:hover {
+  cursor: pointer;
+  
+}
+
+.passage-text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: -webkit-linear-gradient(
+    rgba(242, 244, 244, 0) 0%,
+    rgba(242, 244, 244, 1) 100%
+  );
+  background-image: -moz-linear-gradient(
+    rgba(242, 244, 244, 0) 0%,
+    rgba(242, 244, 244, 1) 100%
+  );
+  background-image: -o-linear-gradient(
+    rgba(242, 244, 244, 0) 0%,
+    rgba(242, 244, 244, 1) 100%
+  );
+  background-image: linear-gradient(
+    rgba(242, 244, 244, 0) 0%,
+    rgba(242, 244, 244, 1) 100%
+  );
+  background-image: -ms-linear-gradient(
+    rgba(242, 244, 244, 0) 0%,
+    rgba(242, 244, 244, 1) 100%
+  );
+}
+
+
+/* list of documents */
+.list-of-documents {
+  background: #ffffff;
+  border: 1px solid #dde5ea;
+  border-radius: 4px;
 }

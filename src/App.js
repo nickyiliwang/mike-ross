@@ -29,7 +29,7 @@ const App = () => {
             <AllResultsPage searchResults={searchResults} />
           </Route>
           <Route path="/single">
-            <SingleResultPage />
+            <SingleResultPage searchResults={searchResults} />
           </Route>
         </Switch>
       </div>

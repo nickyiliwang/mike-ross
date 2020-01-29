@@ -1,13 +1,7 @@
 import React from "react";
 import DocCarousel from "./DocCarousel";
 
-const SingleDoc = ({
-  shortTitle,
-  date,
-  courtName,
-  citation,
-  passages
-}) => {
+const SingleDoc = ({ id, shortTitle, date, courtName, citation, passages }) => {
   return (
     <React.Fragment>
       <div className="top-doc">
@@ -18,7 +12,7 @@ const SingleDoc = ({
       </div>
       <div className="passages">
         <p>{`1 of ${passages.length} Passages`}</p>
-        <DocCarousel passages={passages} />
+        <DocCarousel id={id} passages={passages} />
       </div>
     </React.Fragment>
   );
