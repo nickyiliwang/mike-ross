@@ -5,7 +5,7 @@ import Header from "./components/Header";
 import Search from "./components/Search";
 // pages
 import AllResultsPage from "./pages/all-results";
-import SingleResultPage from "./pages/single-doc";
+import SingleDocPage from "./pages/single-doc";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -29,7 +29,7 @@ const App = () => {
             <AllResultsPage searchResults={searchResults} />
           </Route>
           <Route path="/doc/:id">
-            <SingleResultPage searchResults={searchResults} />
+            <SingleDocPage searchResults={searchResults} />
           </Route>
         </Switch>
       </div>

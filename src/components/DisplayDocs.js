@@ -8,7 +8,7 @@ const DisplayDocs = ({ searchResults }) => {
         const { id, ...restOfDocProps } = doc;
         return (
           <li className="single-doc" key={id}>
-            <SingleDoc id={id} {...restOfDocProps} />
+            <SingleDoc id={id} isCarousel={true} {...restOfDocProps} />
           </li>
         );
       });

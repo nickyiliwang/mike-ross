@@ -1,7 +1,15 @@
 import React from "react";
 import DocCarousel from "./DocCarousel";
 
-const SingleDoc = ({ id, shortTitle, date, courtName, citation, passages }) => {
+const SingleDoc = ({
+  id,
+  shortTitle,
+  date,
+  courtName,
+  citation,
+  passages,
+  isCarousel
+}) => {
   return (
     <React.Fragment>
       <div className="top-doc">
@@ -11,7 +19,13 @@ const SingleDoc = ({ id, shortTitle, date, courtName, citation, passages }) => {
         <p>{citation}</p>
       </div>
       <div className="passages">
-        <DocCarousel id={id} passages={passages} />
+        {isCarousel ? (
+          <DocCarousel id={id} passages={passages} />
+        ) : (
+          passages.map(passage => {
+            return <div key={id}>{passage}</div>;
+          })
+        )}
       </div>
     </React.Fragment>
   );

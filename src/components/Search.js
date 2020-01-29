@@ -18,8 +18,6 @@ const Search = props => {
       })
       .then(res => {
         props.onSearchTermSubmit(res);
-
-
       });
 
     setInput("");
@@ -37,6 +35,7 @@ const Search = props => {
   return (
     <div className="search-bar">
       <form onSubmit={handleOnSubmit}>
+        {/* consider using textarea */}
         <input
           type="text"
           name="text"
