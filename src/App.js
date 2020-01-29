@@ -13,7 +13,6 @@ const App = () => {
   const [searchResults, setSearchResults] = useState([]);
 
   const onSearchTermSubmit = res => {
-    console.log(`haha ${res}`);
     setSearchResults(res);
   };
 

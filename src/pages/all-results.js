@@ -6,14 +6,12 @@ const AllResults = props => {
 
   useEffect(() => {
     setSearchResults(props.searchResults.data);
-    console.log(searchResults)
   });
 
   return (
     <div>
       {searchResults ? (
-        <DisplayDocuments />
-        // <DisplayDocuments searchResults={searchResults} />
+        <DisplayDocuments searchResults={searchResults} />
       ) : (
         <div>Loading...</div>
       )}
