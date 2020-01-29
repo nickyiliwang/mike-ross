@@ -1,53 +1,80 @@
 import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
-import SingleDoc from "../components/SingleDoc";
+import DisplaySingleDoc from "../components/DisplaySingleDoc";
 
 const SingleDocPage = ({ history, searchResults }) => {
-  const [currentDocAt, setCurrentDocAt] = useState(0);
+  const [currentDocData, setCurrentDocData] = useState({});
+  const [currentDocAt, setCurrentDocAt] = useState(null);
   const [disablePrev, setDisablePrev] = useState(true);
   const [disableNext, setDisableNext] = useState(true);
 
   useEffect(() => {
     const currentDocID = history.location.pathname.split("/")[2];
-    console.log(searchResults);
 
     if (searchResults.hasOwnProperty("data")) {
-      console.log("has data");
-      const resultsLength = searchResults.data.documents.length;
-      console.log(resultsLength);
-      const newCurrentDocAt =
-        searchResults.data.documents.findIndex(doc => doc.id === currentDocID) +
-        1;
-      setCurrentDocAt(newCurrentDocAt - 1);
-      if (currentDocAt === 1) {
-        setDisableNext(false);
-      }
-      if (currentDocAt === resultsLength) {
-        setDisablePrev(false);
-      }
+      const resultsDocsData = searchResults.data.documents;
+      const newCurrentDocAt = resultsDocsData.findIndex(
+        doc => doc.id === currentDocID
+      );
+
+      setCurrentDocAt(newCurrentDocAt);
+
+      setCurrentDocData({
+        ...currentDocData,
+        ...resultsDocsData[newCurrentDocAt]
+      });
+
+      handleButtonLogic();
     } else {
       axios.get(`http://localhost:4000/documents/${currentDocID}`).then(res => {
-        console.log(res);
+        setCurrentDocData(res.data.document);
       });
     }
-  });
+  }, []);
+
+  const handleButtonLogic = () => {
+    if (newCurrentDocAt > 0 && newCurrentDocAt < resultsDocsData.length - 1) {
+      setDisableNext(false);
+      setDisablePrev(false);
+    }
+    if (newCurrentDocAt === 0) {
+      setDisableNext(false);
+    }
+    if (newCurrentDocAt === resultsDocsData.length - 1) {
+      setDisablePrev(false);
+    }
+  };
 
   const renderSingleDoc = () => {
-    if (searchResults.hasOwnProperty("data")) {
-      const { ...currentDocProps } = searchResults.data.document[currentDocAt];
+    if (currentDocData.hasOwnProperty("title")) {
+      const { ...currentDocDataProps } = currentDocData;
+      return <DisplaySingleDoc isCarousel={false} {...currentDocDataProps} />;
+    }
+  };
 
-      console.log(searchResults.data.document[currentDocAt]);
+  const handleOnClick = e => {
+    if (e.target.value === "+") {
+      setCurrentDocAt(currentDocAt + 1);
+      handleButtonLogic();
+      console.log(currentDocData);
+    } else {
+      setCurrentDocAt(currentDocAt - 1);
 
-      return <SingleDoc isCarousel={false} {...currentDocProps} />;
+      handleButtonLogic();
+      console.log(currentDocData);
     }
   };
 
   return (
     <div>
       <div>
-        <button disabled={disablePrev}>Prev</button>
-        <button disabled={disableNext}>Next</button>
+        <button disabled={disablePrev} onClick={handleOnClick} value="-">
+          Prev
+        </button>
+        <button disabled={disableNext} onClick={handleOnClick} value="+">
+          Next
+        </button>
       </div>
       <h2>SINGLE DOCUMENT</h2>
       <div>{renderSingleDoc()}</div>

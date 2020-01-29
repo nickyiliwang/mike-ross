@@ -1,7 +1,7 @@
 import React from "react";
 import DocCarousel from "./DocCarousel";
 
-const SingleDoc = ({
+const DisplaySingleDoc = ({
   id,
   shortTitle,
   date,
@@ -22,8 +22,8 @@ const SingleDoc = ({
         {isCarousel ? (
           <DocCarousel id={id} passages={passages} />
         ) : (
-          passages.map(passage => {
-            return <div key={id}>{passage}</div>;
+          passages.map((passage, i) => {
+            return <div key={i}>{passage}</div>;
           })
         )}
       </div>
@@ -31,4 +31,4 @@ const SingleDoc = ({
   );
 };
 
-export default SingleDoc;
+export default DisplaySingleDoc;

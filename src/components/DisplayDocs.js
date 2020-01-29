@@ -1,5 +1,5 @@
 import React from "react";
-import SingleDoc from "./SingleDoc";
+import DisplaySingleDoc from "./DisplaySingleDoc";
 
 const DisplayDocs = ({ searchResults }) => {
   const renderSingleDocument = () => {
@@ -8,7 +8,7 @@ const DisplayDocs = ({ searchResults }) => {
         const { id, ...restOfDocProps } = doc;
         return (
           <li className="single-doc" key={id}>
-            <SingleDoc id={id} isCarousel={true} {...restOfDocProps} />
+            <DisplaySingleDoc id={id} isCarousel={true} {...restOfDocProps} />
           </li>
         );
       });
