@@ -1,9 +1,9 @@
 import React from "react";
 import SingleDocument from "./SingleDocument";
 
-const DisplayDocuments = props => {
+const DisplayDocuments = ({ searchResults }) => {
   const renderSingleDocument = () => {
-    return props.searchResults.documents.map(doc => {
+    return searchResults.documents.map(doc => {
       // shortTitle, date, citation, passages
       const { id, ...restOfDocProps } = doc;
       return (

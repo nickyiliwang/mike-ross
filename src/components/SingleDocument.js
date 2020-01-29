@@ -1,4 +1,5 @@
 import React from "react";
+import DocCarousel from "../components/DocCarousel";
 
 const SingleDocument = ({
   shortTitle,
@@ -17,7 +18,7 @@ const SingleDocument = ({
       </div>
       <div className="passages">
         <p>{`1 of ${passages.length} Passages`}</p>
-        <p>{passages[0]}</p>
+        <DocCarousel passages={passages} />
       </div>
     </React.Fragment>
   );
