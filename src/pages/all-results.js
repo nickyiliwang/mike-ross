@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import DisplayDocuments from "../components/DisplayDocuments";
+import DisplayDocs from "../components/DisplayDocs";
 
 const AllResults = props => {
   const [searchResults, setSearchResults] = useState(null);
@@ -11,7 +11,7 @@ const AllResults = props => {
   return (
     <div>
       {searchResults ? (
-        <DisplayDocuments searchResults={searchResults} />
+        <DisplayDocs searchResults={searchResults} />
       ) : (
         <div>Loading...</div>
       )}

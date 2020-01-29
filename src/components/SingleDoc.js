@@ -1,7 +1,7 @@
 import React from "react";
-import DocCarousel from "../components/DocCarousel";
+import DocCarousel from "./DocCarousel";
 
-const SingleDocument = ({
+const SingleDoc = ({
   shortTitle,
   date,
   courtName,
@@ -24,4 +24,4 @@ const SingleDocument = ({
   );
 };
 
-export default SingleDocument;
+export default SingleDoc;

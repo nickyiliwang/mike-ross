@@ -1,14 +1,14 @@
 import React from "react";
-import SingleDocument from "./SingleDocument";
+import SingleDoc from "./SingleDoc";
 
-const DisplayDocuments = ({ searchResults }) => {
+const DisplayDocs = ({ searchResults }) => {
   const renderSingleDocument = () => {
     return searchResults.documents.map(doc => {
       // shortTitle, date, citation, passages
       const { id, ...restOfDocProps } = doc;
       return (
         <li className="single-doc" key={id}>
-          <SingleDocument {...restOfDocProps} />
+          <SingleDoc {...restOfDocProps} />
         </li>
       );
     });
@@ -22,4 +22,4 @@ const DisplayDocuments = ({ searchResults }) => {
   );
 };
 
-export default DisplayDocuments;
+export default DisplayDocs;

@@ -5,11 +5,15 @@ import { Carousel } from "react-responsive-carousel";
 const DocCarousel = ({ passages }) => {
   {
     return (
-      <Carousel showThumbs={false} className='carousel'>
+      <Carousel
+        useKeyboardArrows={true}
+        showThumbs={false}
+        showIndicators={false}
+      >
         {passages.map(passage => {
           return (
             <div>
-              <p>{passage}</p>
+              <p className="passage-text">{passage}</p>
             </div>
           );
         })}
