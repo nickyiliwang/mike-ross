@@ -28,7 +28,7 @@ const App = () => {
             <Search onSearchTermSubmit={onSearchTermSubmit} />
             <AllResultsPage searchResults={searchResults} />
           </Route>
-          <Route path="/single">
+          <Route path="/doc/:id">
             <SingleResultPage searchResults={searchResults} />
           </Route>
         </Switch>

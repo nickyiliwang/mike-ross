@@ -11,7 +11,6 @@ const SingleDoc = ({ id, shortTitle, date, courtName, citation, passages }) => {
         <p>{citation}</p>
       </div>
       <div className="passages">
-        <p>{`1 of ${passages.length} Passages`}</p>
         <DocCarousel id={id} passages={passages} />
       </div>
     </React.Fragment>

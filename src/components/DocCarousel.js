@@ -1,8 +1,13 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import { withRouter } from "react-router-dom";
 
-const DocCarousel = ({ id, passages }) => {
+const DocCarousel = ({ id, passages, history }) => {
+  const handleOnClick = () => {
+    history.push(`/doc/${id}`);
+  };
+
   {
     return (
       <Carousel
@@ -14,7 +19,9 @@ const DocCarousel = ({ id, passages }) => {
         {passages.map(passage => {
           return (
             <div key={id} className="passage-text-container">
-              <p className="passage-text">{passage}</p>
+              <p className="passage-text" onClick={handleOnClick}>
+                {passage}
+              </p>
               <div className="fadeout"></div>
             </div>
           );
@@ -24,4 +31,4 @@ const DocCarousel = ({ id, passages }) => {
   }
 };
 
-export default DocCarousel;
+export default withRouter(DocCarousel);
