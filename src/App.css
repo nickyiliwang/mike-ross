@@ -91,3 +91,9 @@ h1 {
 .search-input {
   width: 40%;
 }
+
+.wrapper {
+  max-width: 1440px;
+  width: 80%;
+  margin: 0 auto;
+}
