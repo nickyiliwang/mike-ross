@@ -22,7 +22,6 @@ const DocCarousel = ({ id, passages, history }) => {
               <p className="passage-text" onClick={handleOnClick}>
                 {passage}
               </p>
-              <div className="fadeout"></div>
             </div>
           );
         })}

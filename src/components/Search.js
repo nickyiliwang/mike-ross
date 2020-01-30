@@ -43,7 +43,7 @@ const Search = props => {
             : {
                 background: `#ffffff`,
                 margin: `0 auto`,
-                maxWidth: `1440px`,
+                maxWidth: `1400px`,
                 padding: `20px 10%`,
                 boxShadow: `0px 2px 8px rgba(79, 94, 100, 0.1)`
               }
