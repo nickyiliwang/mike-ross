@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./setup.css";
-import "./App.css";
+// css
+import "./style/styles.scss";
 import Header from "./components/Header";
 import Search from "./components/Search";
 // pages

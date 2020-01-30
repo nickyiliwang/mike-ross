@@ -1,5 +1,5 @@
 import React from "react";
-import "./dropdown.css";
+import "./dropdown.scss";
 
 const Dropdown = ({ setFontSizeValue, setFontFamilyValue }) => {
   const handleOnFontSizeChange = e => {

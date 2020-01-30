@@ -26,7 +26,6 @@ const DisplayDocs = ({ searchResults }) => {
 
   return (
     <div>
-      <h2>Documents</h2>
       <ul className="doc-list">{renderSingleDocument()}</ul>
     </div>
   );

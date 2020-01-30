@@ -1,0 +1,42 @@
+/* Loading Animation */
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading-skeleton {
+  animation: loading 3s infinite ease;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+
+  .background {
+    background: #fafafa;
+    border-radius: 3px 3px 0px 0px;
+  }
+
+  .one {
+    background: #c0cbd1;
+    opacity: 0.6;
+    border-radius: 20px;
+    height: 11px;
+  }
+  .two {
+    background: #e7eded;
+    opacity: 0.9;
+    border-radius: 6px;
+    height: 8px;
+  }
+  .three {
+    background: #1a1a1a;
+    opacity: 0.05;
+    border-radius: 2px;
+    height: 6px;
+  }
+}

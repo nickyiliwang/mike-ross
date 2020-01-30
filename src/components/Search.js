@@ -40,7 +40,7 @@ const Search = props => {
           type="text"
           name="text"
           value={input}
-          className="text-input"
+          className="search-input"
           onChange={handleOnInputChange}
           maxLength={200}
         />
@@ -48,7 +48,7 @@ const Search = props => {
         <select
           onChange={handleDropdownOnChange}
           name="dropdown"
-          className="dropdown"
+          className="select-dropdown"
         >
           <option value="keyword">Keyword</option>
           <option value="citation">Citation</option>

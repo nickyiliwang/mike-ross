@@ -1,0 +1,21 @@
+body {
+  background-color: $primaryBackgroundGrey;
+}
+
+.wrapper {
+  max-width: 1440px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+// fonts
+h1 {
+  font-family: Helvetica, sans-serif;
+  font-size: 24px;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+h2 {
+}
+
