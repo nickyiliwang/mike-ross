@@ -5,6 +5,7 @@ import DisplaySingleDoc from "../components/DisplaySingleDoc";
 
 const SingleDocPage = ({ history, searchResults }) => {
   const [currentDocData, setCurrentDocData] = useState({});
+  const [searchResultsData, setSearchResultsData] = useState([]);
   const [currentDocAt, setCurrentDocAt] = useState(null);
   const [disablePrev, setDisablePrev] = useState(true);
   const [disableNext, setDisableNext] = useState(true);
@@ -14,6 +15,8 @@ const SingleDocPage = ({ history, searchResults }) => {
 
     if (searchResults.hasOwnProperty("data")) {
       const resultsDocsData = searchResults.data.documents;
+      setSearchResultsData(resultsDocsData);
+
       const newCurrentDocAt = resultsDocsData.findIndex(
         doc => doc.id === currentDocID
       );
@@ -25,24 +28,26 @@ const SingleDocPage = ({ history, searchResults }) => {
         ...resultsDocsData[newCurrentDocAt]
       });
 
-      handleButtonLogic();
+      nextPrevButtonLogic(newCurrentDocAt, resultsDocsData);
     } else {
       axios.get(`http://localhost:4000/documents/${currentDocID}`).then(res => {
         setCurrentDocData(res.data.document);
       });
     }
-  }, []);
+  }, [history.location.pathname]);
 
-  const handleButtonLogic = () => {
-    if (newCurrentDocAt > 0 && newCurrentDocAt < resultsDocsData.length - 1) {
+  const nextPrevButtonLogic = (docAt, results) => {
+    if (docAt > 0 && docAt < results.length - 1) {
       setDisableNext(false);
       setDisablePrev(false);
     }
-    if (newCurrentDocAt === 0) {
+    if (docAt === 0) {
       setDisableNext(false);
+      setDisablePrev(true);
     }
-    if (newCurrentDocAt === resultsDocsData.length - 1) {
+    if (docAt === results.length - 1) {
       setDisablePrev(false);
+      setDisableNext(true);
     }
   };
 
@@ -55,14 +60,13 @@ const SingleDocPage = ({ history, searchResults }) => {
 
   const handleOnClick = e => {
     if (e.target.value === "+") {
-      setCurrentDocAt(currentDocAt + 1);
-      handleButtonLogic();
-      console.log(currentDocData);
+      const nextResult = searchResultsData[currentDocAt + 1].id;
+      history.push(`/doc/${nextResult}`);
+      nextPrevButtonLogic(currentDocAt, searchResultsData);
     } else {
-      setCurrentDocAt(currentDocAt - 1);
-
-      handleButtonLogic();
-      console.log(currentDocData);
+      const prevResult = searchResultsData[currentDocAt - 1].id;
+      history.push(`/doc/${prevResult}`);
+      nextPrevButtonLogic(currentDocAt, searchResultsData);
     }
   };
 
@@ -85,12 +89,9 @@ const SingleDocPage = ({ history, searchResults }) => {
 export default withRouter(SingleDocPage);
 
 // Display Settings Dropdown (font size and font family)
-
 // cite button that copies the text
-
 // renders p tag
 // show full title button,
-
 // searchResults comes in as an array of objects, depending on which document the use is looking at. we need to know if the array has something in front of it or behind it
 // x results in front
 // y results in back
