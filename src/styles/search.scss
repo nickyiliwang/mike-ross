@@ -5,16 +5,21 @@
   .search-input,
   .select-dropdown,
   .search-submit-icon {
-    height: 30px;
+    height: 40px;
   }
 
   .search-input {
-    width: calc(80% - 40px);
+    width: calc(80% - 45px);
     background: #ffffff;
     border: 1.5px solid #dde5ea;
     border-radius: 8px 0 0 8px;
     font-size: 14px;
     color: #444444;
+    padding: 10px 0px 10px 10px;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   .select-dropdown {
@@ -28,8 +33,8 @@
   .search-submit-icon {
     background: #2a228e;
     border-radius: 0px 8px 8px 0px;
-    width: 40px;
-    padding: 6px;
+    width: 45px;
+    padding: 7px;
     margin: 0;
     position: absolute;
   }

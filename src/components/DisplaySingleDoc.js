@@ -10,17 +10,19 @@ const DisplaySingleDoc = ({
   passages
 }) => {
   return (
-    <React.Fragment>
+    <div className="list-of-documents">
       <div className="list-top-doc">
         <h3>{shortTitle}</h3>
-        <p>{courtName}</p>
-        <p>{date}</p>
-        <p>{citation}</p>
+        <div className="meta-text">
+          <p>{courtName}</p>
+          <p>{date}</p>
+          <p>{citation}</p>
+        </div>
       </div>
-      <div className="list-passages">
+      <div className="wrapper list-passages">
         <DocCarousel id={id} passages={passages} />
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 

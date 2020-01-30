@@ -1,4 +1,5 @@
 FLOW:
+
 1. Greeted by : Search Page
 2. On input submit: go to Results/ Catalogue/ all results Page/ (Loading skeleton, carouse ...)
 3. Onclick to a single page (single page with copying and change fonts)
@@ -15,13 +16,11 @@ Dynamic scale input field
 
 TODO:
 deal with docs without passages/carousel, maybe give a button to go
-Loading skeleton
 Doc list css
 Sorting List by date and Alpha
 no match css
 display setting css
 single page css
-maybe use sass?
 responsive
 
 # ROSS Mini Interview Question
