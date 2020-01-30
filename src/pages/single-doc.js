@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
-import DisplaySingleDoc from "../components/DisplaySingleDoc";
+import DisplaySinglePageDoc from "../components/DisplaySinglePageDoc";
+import CitationButton from "../components/CitationButton";
 
 const SingleDocPage = ({ history, searchResults }) => {
   const [currentDocData, setCurrentDocData] = useState({});
@@ -51,13 +52,6 @@ const SingleDocPage = ({ history, searchResults }) => {
     }
   };
 
-  const renderSingleDoc = () => {
-    if (currentDocData.hasOwnProperty("title")) {
-      const { ...currentDocDataProps } = currentDocData;
-      return <DisplaySingleDoc isCarousel={false} {...currentDocDataProps} />;
-    }
-  };
-
   const handleOnClick = e => {
     if (e.target.value === "+") {
       const nextResult = searchResultsData[currentDocAt + 1].id;
@@ -70,9 +64,17 @@ const SingleDocPage = ({ history, searchResults }) => {
     }
   };
 
+  const renderSingleDoc = () => {
+    if (currentDocData.hasOwnProperty("title")) {
+      const { ...currentDocDataProps } = currentDocData;
+      return <DisplaySinglePageDoc {...currentDocDataProps} />;
+    }
+  };
+
   return (
     <div>
-      <div>
+      <div className="user-controls">
+        <CitationButton citation={currentDocData.citation} />
         <button disabled={disablePrev} onClick={handleOnClick} value="-">
           Prev
         </button>
@@ -80,7 +82,6 @@ const SingleDocPage = ({ history, searchResults }) => {
           Next
         </button>
       </div>
-      <h2>SINGLE DOCUMENT</h2>
       <div>{renderSingleDoc()}</div>
     </div>
   );

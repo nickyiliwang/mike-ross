@@ -7,25 +7,18 @@ const DisplaySingleDoc = ({
   date,
   courtName,
   citation,
-  passages,
-  isCarousel
+  passages
 }) => {
   return (
     <React.Fragment>
-      <div className="top-doc">
+      <div className="list-top-doc">
         <h3>{shortTitle}</h3>
         <p>{courtName}</p>
         <p>{date}</p>
         <p>{citation}</p>
       </div>
-      <div className="passages">
-        {isCarousel ? (
-          <DocCarousel id={id} passages={passages} />
-        ) : (
-          passages.map((passage, i) => {
-            return <div key={i}>{passage}</div>;
-          })
-        )}
+      <div className="list-passages">
+        <DocCarousel id={id} passages={passages} />
       </div>
     </React.Fragment>
   );
