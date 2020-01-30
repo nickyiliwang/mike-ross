@@ -23,7 +23,6 @@ const DisplaySinglePageDoc = ({
         <h2>{isFullTitle ? title : shortTitle}</h2>
         <p>{courtName}</p>
         <p>{date}</p>
-        {console.log(fontFamilyValue)}
       </div>
 
       <div>

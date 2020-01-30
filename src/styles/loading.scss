@@ -16,7 +16,9 @@
   animation-fill-mode: forwards;
   animation-timing-function: linear;
 
-  .background {
+  .loading-top {
+    padding: 10px;
+    height: 80px;
     background: #fafafa;
     border-radius: 3px 3px 0px 0px;
   }
@@ -26,17 +28,45 @@
     opacity: 0.6;
     border-radius: 20px;
     height: 11px;
+    width: 40%;
+    margin: 10px 0;
   }
-  .two {
+  .two-container {
+    display: flex;
+  }
+
+  .two-container li {
     background: #e7eded;
     opacity: 0.9;
     border-radius: 6px;
     height: 8px;
+    margin: 0 5px;
+
+    &:nth-of-type(1) {
+      width: 30%;
+    }
+    &:nth-of-type(2) {
+      width: 10%;
+    }
+    &:nth-of-type(3) {
+      width: 20%;
+    }
+    &:nth-of-type(4) {
+      width: 20%;
+    }
   }
-  .three {
+
+  .loading-bottom {
+    background: #ffffff;
+    height: 200px;
+    padding: 5px 0;
+  }
+
+  .three-container li {
     background: #1a1a1a;
     opacity: 0.05;
     border-radius: 2px;
     height: 6px;
+    margin: 30px 0;
   }
 }

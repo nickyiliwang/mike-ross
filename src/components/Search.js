@@ -34,15 +34,32 @@ const Search = props => {
 
   return (
     <div className="search-bar">
-      <form onSubmit={handleOnSubmit}>
-        {/* consider using textarea */}
-        <input
+      <form
+        style={
+          props.center
+            ? {
+                margin: `30% 0px`
+              }
+            : {
+                background: `#ffffff`,
+                margin: `0 auto`,
+                maxWidth: `1440px`,
+                padding: `20px 10%`,
+                boxShadow: `0px 2px 8px rgba(79, 94, 100, 0.1)`
+              }
+        }
+        onSubmit={handleOnSubmit}
+      >
+        <textarea
           type="text"
           name="text"
           value={input}
           className="search-input"
           onChange={handleOnInputChange}
           maxLength={200}
+          style={{
+            minHeight: `${input.length / 1.5}px`
+          }}
         />
 
         <select

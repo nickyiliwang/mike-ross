@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // css
-import "./style/styles.scss";
+import "./styles/styles.scss";
 import Header from "./components/Header";
 import Search from "./components/Search";
 // pages
@@ -19,20 +19,22 @@ const App = () => {
   return (
     <Router>
       <Header />
-      <div className="wrapper">
-        <Switch>
-          <Route exact path="/">
-            <Search onSearchTermSubmit={onSearchTermSubmit} />
-          </Route>
-          <Route path="/results">
-            <Search onSearchTermSubmit={onSearchTermSubmit} />
+      <Switch>
+        <Route exact path="/">
+          <div className="wrapper">
+            <Search center={true} onSearchTermSubmit={onSearchTermSubmit} />
+          </div>
+        </Route>
+        <Route path="/results">
+          <Search center={false} onSearchTermSubmit={onSearchTermSubmit} />
+          <div className="wrapper">
             <AllResultsPage searchResults={searchResults} />
-          </Route>
-          <Route path="/doc/:id">
-            <SingleDocPage searchResults={searchResults} />
-          </Route>
-        </Switch>
-      </div>
+          </div>
+        </Route>
+        <Route path="/doc/:id">
+          <SingleDocPage searchResults={searchResults} />
+        </Route>
+      </Switch>
     </Router>
   );
 };

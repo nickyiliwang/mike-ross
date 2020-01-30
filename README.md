@@ -1,10 +1,19 @@
 FLOW:
-Greeted by : Search Page
-On input submit: go to Results/ Catalogue/ all results Page/ (Loading skeleton, carouse ...)
-Onclick to a single page (single page with copying and change fonts)
+1. Greeted by : Search Page
+2. On input submit: go to Results/ Catalogue/ all results Page/ (Loading skeleton, carouse ...)
+3. Onclick to a single page (single page with copying and change fonts)
+
+Issues:
+Dynamic scale input field
+
+- draw backs with textarea:
+  1. textarea doesn't want to let you use enter to submit input
+  2. tried onKeyPress={e => e.keyCode === 13 && handleOnSubmit()}
+- draw backs with input:
+  1. input element is only one line and will grow out of bounds/window
+  2. it looks nicer/more intuitive with enter to submit
 
 TODO:
-Dynamic scale input field
 deal with docs without passages/carousel, maybe give a button to go
 Loading skeleton
 Doc list css
