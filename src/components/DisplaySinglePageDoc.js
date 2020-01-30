@@ -6,9 +6,12 @@ const DisplaySinglePageDoc = ({
   date,
   courtName,
   citation,
-  passages
+  passages,
+  fontSizeValue,
+  fontFamilyValue
 }) => {
   const [isFullTitle, setIsFullTitle] = useState(false);
+
   const handleOnClick = () => {
     setIsFullTitle(!isFullTitle);
   };
@@ -20,6 +23,7 @@ const DisplaySinglePageDoc = ({
         <h2>{isFullTitle ? title : shortTitle}</h2>
         <p>{courtName}</p>
         <p>{date}</p>
+        {console.log(fontFamilyValue)}
       </div>
 
       <div>
@@ -28,7 +32,13 @@ const DisplaySinglePageDoc = ({
         </button>
       </div>
 
-      <div className="single-passages">
+      <div
+        className="single-passages"
+        style={{
+          fontSize: `${fontSizeValue}px`,
+          fontFamily: `${fontFamilyValue}`
+        }}
+      >
         {passages.map((passage, i) => {
           return (
             <p key={i} className="single-passages-content">

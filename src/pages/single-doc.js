@@ -3,13 +3,21 @@ import { withRouter } from "react-router-dom";
 import axios from "axios";
 import DisplaySinglePageDoc from "../components/DisplaySinglePageDoc";
 import CitationButton from "../components/CitationButton";
+import Dropdown from "../components/dropdown/Dropdown";
 
 const SingleDocPage = ({ history, searchResults }) => {
+  // documents state
   const [currentDocData, setCurrentDocData] = useState({});
   const [searchResultsData, setSearchResultsData] = useState([]);
   const [currentDocAt, setCurrentDocAt] = useState(null);
+  // button state
   const [disablePrev, setDisablePrev] = useState(true);
   const [disableNext, setDisableNext] = useState(true);
+  // ui state
+  const [fontSizeValue, setFontSizeValue] = useState(16);
+  const [fontFamilyValue, setFontFamilyValue] = useState(
+    "Helvetica, sans-serif"
+  );
 
   useEffect(() => {
     const currentDocID = history.location.pathname.split("/")[2];
@@ -67,7 +75,13 @@ const SingleDocPage = ({ history, searchResults }) => {
   const renderSingleDoc = () => {
     if (currentDocData.hasOwnProperty("title")) {
       const { ...currentDocDataProps } = currentDocData;
-      return <DisplaySinglePageDoc {...currentDocDataProps} />;
+      return (
+        <DisplaySinglePageDoc
+          fontSizeValue={fontSizeValue}
+          fontFamilyValue={fontFamilyValue}
+          {...currentDocDataProps}
+        />
+      );
     }
   };
 
@@ -75,6 +89,10 @@ const SingleDocPage = ({ history, searchResults }) => {
     <div>
       <div className="user-controls">
         <CitationButton citation={currentDocData.citation} />
+        <Dropdown
+          setFontSizeValue={setFontSizeValue}
+          setFontFamilyValue={setFontFamilyValue}
+        />
         <button disabled={disablePrev} onClick={handleOnClick} value="-">
           Prev
         </button>

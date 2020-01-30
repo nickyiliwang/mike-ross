@@ -7,7 +7,6 @@ const CitationButton = ({ citation }) => {
     <CopyToClipboard text={citation}>
       <button>
         <img src={citeSVG} alt="cite button svg" /> Cite
-        {console.log('copied')}
       </button>
     </CopyToClipboard>
   );
