@@ -27,7 +27,7 @@ const DisplaySingleDoc = ({
           <p>{citation}</p>
         </div>
       </div>
-      <div className="wrapper list-passages">
+      <div className="list-passages">
         <DocCarousel id={id} passages={passages} />
       </div>
     </div>
