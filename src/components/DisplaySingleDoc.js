@@ -18,7 +18,7 @@ const DisplaySingleDoc = ({
   return (
     <div className="list-of-documents">
       <div onClick={handleOnClick} className="list-top-doc">
-        <h3>{shortTitle}</h3>
+        <h2>{shortTitle}</h2>
         <div className="meta-text">
           <p>{courtName}</p>
           <div className="vr"></div>

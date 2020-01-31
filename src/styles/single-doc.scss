@@ -1,31 +1,56 @@
-.single-doc-page {
-}
-
 .user-controls {
   display: flex;
   justify-content: space-between;
+  background: #ffffff;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
 
   .left-controls {
     display: flex;
     align-items: center;
+
+    .citation-button,
+    .dropdown-button,
+    .vr {
+      height: 30px;
+      margin-left: 20px;
+    }
+
+    .citation-button button {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      border: none;
+      background: #ffffff;
+
+      &:hover {
+        background: #dde5ea;
+        border-radius: 4px;
+      }
+    }
+
+    .dropdown-button {
+      display: flex;
+      align-items: center;
+    }
   }
 
   .navigate-results {
+    display: flex;
+    align-items: center;
+
+    & * {
+      margin-right: 20px;
+    }
+
+    button {
+      padding: 5px 20px;
+    }
   }
-}
 
-.single .title {
-  font-size: 18px;
-  color: #1a1a1a;
-}
-.single .metadata {
-  font-size: 12px;
-  color: #757575;
-}
-
-.single .passage {
-  font-size: 16px;
-  color: #1a1a1a;
+  .vr {
+    height: 16px;
+  }
 }
 
 .single-top-doc {
@@ -51,15 +76,23 @@
 .single-page-content {
   background: #ffffff;
   border-radius: 8px;
+}
 
+.single-passages {
   position: relative;
-  
   .show-full-title {
-    top: -10px;
+    border: 1px solid #dde5ea;
+    padding: 5px 40px;
+    border-radius: 50px;
+    top: -35px;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
+
+    &:focus {
+      outline: none;
+    }
   }
 }

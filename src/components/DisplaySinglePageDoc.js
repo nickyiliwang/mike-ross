@@ -17,18 +17,12 @@ const DisplaySinglePageDoc = ({
   };
 
   return (
-    <div className='single-page-content'>
+    <div className="single-page-content">
       <div className="single-top-doc">
         <p>{citation}</p>
         <h2>{isFullTitle ? title : shortTitle}</h2>
         <p>{courtName}</p>
         <p>{date}</p>
-      </div>
-
-      <div>
-        <button className="show-full-title" onClick={handleOnClick}>
-          {isFullTitle ? "Hide Full Title" : "Show Full Title"}
-        </button>
       </div>
 
       <div
@@ -38,6 +32,9 @@ const DisplaySinglePageDoc = ({
           fontFamily: `${fontFamilyValue}`
         }}
       >
+        <button className="show-full-title" onClick={handleOnClick}>
+          {isFullTitle ? "Hide Full Title" : "Show Full Title"}
+        </button>
         {passages.map((passage, i) => {
           return (
             <p key={i} className="single-passages-content">

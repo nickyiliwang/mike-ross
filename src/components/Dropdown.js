@@ -1,5 +1,4 @@
 import React from "react";
-import "./dropdown.scss";
 
 const Dropdown = ({ setFontSizeValue, setFontFamilyValue }) => {
   const handleOnFontSizeChange = e => {
@@ -10,8 +9,7 @@ const Dropdown = ({ setFontSizeValue, setFontFamilyValue }) => {
   };
 
   return (
-    <div>
-      <div>
+      <div className="dropdown-button">
         <label className="dropdown">
           <div className="dd-button">Aa</div>
 
@@ -93,7 +91,6 @@ const Dropdown = ({ setFontSizeValue, setFontFamilyValue }) => {
           </ul>
         </label>
       </div>
-    </div>
   );
 };
 

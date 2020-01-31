@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import axios from "axios";
 import DisplaySinglePageDoc from "../components/DisplaySinglePageDoc";
 import CitationButton from "../components/CitationButton";
-import Dropdown from "../components/dropdown/Dropdown";
+import Dropdown from "../components/Dropdown";
 
 const SingleDocPage = ({ history, searchResults }) => {
   // documents state
@@ -88,17 +88,21 @@ const SingleDocPage = ({ history, searchResults }) => {
   return (
     <div className="single-doc-page">
       <div className="user-controls">
-        <div className='left-controls'>
-          <CitationButton citation={currentDocData.citation} />
-          <Dropdown
-            setFontSizeValue={setFontSizeValue}
-            setFontFamilyValue={setFontFamilyValue}
-          />
+        <div className="left-controls">
+          <div className="citation-button">
+            <CitationButton citation={currentDocData.citation} />
+          </div>
+          <div className="vr"></div>
+            <Dropdown
+              setFontSizeValue={setFontSizeValue}
+              setFontFamilyValue={setFontFamilyValue}
+            />
         </div>
         <div className="navigate-results">
           <button disabled={disablePrev} onClick={handleOnClick} value="-">
-            Prev
+            Previous
           </button>
+          <div className="vr"></div>
           <button disabled={disableNext} onClick={handleOnClick} value="+">
             Next
           </button>

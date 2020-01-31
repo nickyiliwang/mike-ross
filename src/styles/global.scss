@@ -16,6 +16,33 @@ h1 {
   text-transform: uppercase;
 }
 
+/* heading text */
 h2 {
+  font-weight: bold;
+  font-size: 18px;
+  color: #1a1a1a;
+  margin: 4px;
 }
 
+// vertical
+.vr {
+  border-left: 1px solid #757575;
+  height: 12px;
+}
+
+button {
+  border: none;
+  background: #ffffff;
+  cursor: pointer;
+  &:hover {
+    background: #dde5ea;
+    border-radius: 4px;
+  }
+}
+button[disabled],
+input[disabled] {
+  cursor: default;
+  &:hover {
+    background: none;
+  }
+}
