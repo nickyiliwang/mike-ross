@@ -14,10 +14,6 @@ Dynamic scale input field
   1. input element is only one line and will grow out of bounds/window
   2. it looks nicer/more intuitive with enter to submit
 
-TODO:
-display setting css
-responsive
-
 # ROSS Mini Interview Question
 
 ## Requirements

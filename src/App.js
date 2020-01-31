@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 // css
 import "./styles/styles.scss";
+// components
 import Header from "./components/Header";
 import Search from "./components/Search";
 // pages
 import AllResultsPage from "./pages/all-results";
 import SingleDocPage from "./pages/single-doc";
-
+// router
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {

@@ -1,0 +1,35 @@
+@media only screen and (max-width: 480px) {
+  .wrapper {
+    width: 90%;
+  }
+
+  .dd-menu {
+    left: -80px;
+  }
+
+  .header-container {
+    .previous-button {
+      left: 20px;
+    }
+  }
+
+  .user-controls {
+    .left-controls {
+      margin-left: 10px;
+    }
+
+    .navigate-results {
+      margin-right: 10px;
+
+      & * {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .single-passages {
+    .single-passages-content {
+      padding: 60px 40px 0 40px;
+    }
+  }
+}
