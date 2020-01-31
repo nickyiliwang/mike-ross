@@ -7,14 +7,14 @@ const DisplayDocs = ({ searchResults }) => {
       return searchResults.documents.map(doc => {
         const { id, ...restOfDocProps } = doc;
         return (
-          <li className="single-doc" key={id}>
+          <li key={id}>
             <DisplaySingleDoc id={id} {...restOfDocProps} />
           </li>
         );
       });
     } else {
       return (
-        <div>
+        <div className='no-results'>
           <p>
             Unfortunately we could not find any results. Please try another
             search.

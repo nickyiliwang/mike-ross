@@ -17,7 +17,7 @@ const DisplaySinglePageDoc = ({
   };
 
   return (
-    <React.Fragment>
+    <div className='single-page-content'>
       <div className="single-top-doc">
         <p>{citation}</p>
         <h2>{isFullTitle ? title : shortTitle}</h2>
@@ -46,7 +46,7 @@ const DisplaySinglePageDoc = ({
           );
         })}
       </div>
-    </React.Fragment>
+    </div>
   );
 };
 

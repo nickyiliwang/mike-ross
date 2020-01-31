@@ -38,12 +38,11 @@ const Search = props => {
         style={
           props.center
             ? {
-                margin: `30% 0px`
+                margin: `20% 0px`
               }
             : {
                 background: `#ffffff`,
                 margin: `0 auto`,
-                maxWidth: `1400px`,
                 padding: `20px 10%`,
                 boxShadow: `0px 2px 8px rgba(79, 94, 100, 0.1)`
               }

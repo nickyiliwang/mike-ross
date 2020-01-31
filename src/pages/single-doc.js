@@ -86,21 +86,25 @@ const SingleDocPage = ({ history, searchResults }) => {
   };
 
   return (
-    <div>
+    <div className="single-doc-page">
       <div className="user-controls">
-        <CitationButton citation={currentDocData.citation} />
-        <Dropdown
-          setFontSizeValue={setFontSizeValue}
-          setFontFamilyValue={setFontFamilyValue}
-        />
-        <button disabled={disablePrev} onClick={handleOnClick} value="-">
-          Prev
-        </button>
-        <button disabled={disableNext} onClick={handleOnClick} value="+">
-          Next
-        </button>
+        <div className='left-controls'>
+          <CitationButton citation={currentDocData.citation} />
+          <Dropdown
+            setFontSizeValue={setFontSizeValue}
+            setFontFamilyValue={setFontFamilyValue}
+          />
+        </div>
+        <div className="navigate-results">
+          <button disabled={disablePrev} onClick={handleOnClick} value="-">
+            Prev
+          </button>
+          <button disabled={disableNext} onClick={handleOnClick} value="+">
+            Next
+          </button>
+        </div>
       </div>
-      <div>{renderSingleDoc()}</div>
+      <div className="wrapper">{renderSingleDoc()}</div>
     </div>
   );
 };
