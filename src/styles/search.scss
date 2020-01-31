@@ -17,21 +17,15 @@
     color: #444444;
     padding: 10px;
     overflow: hidden;
-
-    &:focus {
-      outline: none;
-    }
   }
 
   // select
   .select-dropdown {
     width: 30%;
     background: #fafafa;
-    border-radius: 0;
     font-size: 16px;
     color: #4f5e64;
     padding: 10px 0px 10px 10px;
-
   }
 
   // icon

@@ -16,10 +16,10 @@ const Dropdown = ({ setFontSizeValue, setFontFamilyValue }) => {
         <input type="checkbox" className="dd-input" />
 
         <ul className="dd-menu">
-          <li>
+          <li className="dd-title">
             <h3>Display Settings</h3>
           </li>
-          <li>
+          <li className="dd-select-fonts">
             <label>
               <input
                 onChange={handleOnFontSizeChange}
@@ -29,8 +29,6 @@ const Dropdown = ({ setFontSizeValue, setFontFamilyValue }) => {
               />
               <p className="small-font">Aa</p>
             </label>
-          </li>
-          <li>
             <label>
               <input
                 onChange={handleOnFontSizeChange}
@@ -41,8 +39,6 @@ const Dropdown = ({ setFontSizeValue, setFontFamilyValue }) => {
               />
               <p className="medium-font">Aa</p>
             </label>
-          </li>
-          <li>
             <label>
               <input
                 onChange={handleOnFontSizeChange}
@@ -54,7 +50,7 @@ const Dropdown = ({ setFontSizeValue, setFontFamilyValue }) => {
             </label>
           </li>
           <li className="divider"></li>
-          <li>
+          <li className='dd-select-family'>
             <label>
               <input
                 onChange={handleOnFontFamilyChange}
@@ -65,8 +61,6 @@ const Dropdown = ({ setFontSizeValue, setFontFamilyValue }) => {
               />
               <p className="helvetic-font">Helvetica</p>
             </label>
-          </li>
-          <li>
             <label>
               <input
                 onChange={handleOnFontFamilyChange}
@@ -76,8 +70,6 @@ const Dropdown = ({ setFontSizeValue, setFontFamilyValue }) => {
               />
               <p className="times-new-roman-font">Times New Roman</p>
             </label>
-          </li>
-          <li>
             <label>
               <input
                 onChange={handleOnFontFamilyChange}

@@ -9,59 +9,97 @@
   display: inline-block;
   cursor: pointer;
   padding: 8px;
-}
 
-.dd-button:hover {
-  background-color: #dde5ea;
-  border-radius: 4px;
+  &:hover {
+    background-color: #dde5ea;
+    border-radius: 4px;
+  }
 }
 
 .dd-input {
   display: none;
+  & + .dd-menu {
+    display: none;
+  }
+
+  &:checked + .dd-menu {
+    display: block;
+  }
 }
 
 .dd-menu {
+  width: 360px;
   position: absolute;
-  top: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid#dde5ea;
   border-radius: 4px;
   padding: 0;
   margin: 2px 0 0 0;
-  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
   background-color: #ffffff;
   list-style-type: none;
   z-index: 999;
+
+  .dd-title {
+    cursor: default;
+    &:hover {
+      background: none;
+    }
+  }
+
+  li {
+    padding: 10px 20px;
+    white-space: nowrap;
+  }
+
+  .divider {
+    padding: 0;
+    border-bottom: 1px solid #cccccc;
+  }
+
+  .dd-select-fonts {
+    display: flex;
+
+    p {
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid#dde5ea;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f6f6f6;
+      }
+    }
+
+    input {
+      display: none;
+
+      &:checked + p {
+        background-color: #f6f6f6;
+        color: #2a228e;
+      }
+    }
+  }
+
+  .dd-select-family {
+    display: flex;
+    padding: 30px 20px;
+
+    label {
+      width: 100%;
+      display: flex;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    p {
+      padding-left: 10px;
+    }
+  }
 }
 
-.dd-input + .dd-menu {
-  display: none;
-}
-
-.dd-input:checked + .dd-menu {
-  display: block;
-}
-
-.dd-menu li {
-  padding: 10px 20px;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.dd-menu li:hover {
-  background-color: #f6f6f6;
-}
-
-.dd-menu li a {
-  display: block;
-  margin: -10px -20px;
-  padding: 10px 20px;
-}
-
-.dd-menu li.divider {
-  padding: 0;
-  border-bottom: 1px solid #cccccc;
-}
-
+// font size
 .small-font {
   font-size: 12px;
 }
@@ -72,6 +110,7 @@
   font-size: 20px;
 }
 
+// font color
 .helvetic-font {
   font-family: "Helvetica", "Arial", sans-serif;
 }
@@ -82,21 +121,4 @@
 
 .arial-font {
   font-family: Arial, Helvetica, sans-serif;
-}
-
-.dropdown-selected {
-  background: #dde5ea;
-  border-radius: 4px 4px 0px 0px;
-  font-size: 12px;
-  color: #2a228e;
-}
-
-/* not selected color: #4F5E64 */
-
-.dropdown-container {
-  background: #ffffff;
-  border: 1px solid #dde5ea;
-  box-sizing: border-box;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.12);
-  border-radius: 4px;
 }

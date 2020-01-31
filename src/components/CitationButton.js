@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const CitationButton = ({ citation }) => {
   const notify = () =>
-    toast("Cited !", {
+    toast(" ✔ Cited current document !", {
       autoClose: 1500,
       position: "top-center",
       hideProgressBar: true,
@@ -18,7 +18,8 @@ const CitationButton = ({ citation }) => {
       <ToastContainer />
       <CopyToClipboard text={citation}>
         <button onClick={notify}>
-          <img src={citeSVG} alt="cite button svg" />Cite
+          <img src={citeSVG} alt="cite button svg" />
+          Cite
         </button>
       </CopyToClipboard>
     </div>
