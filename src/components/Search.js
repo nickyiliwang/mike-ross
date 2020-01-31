@@ -10,7 +10,6 @@ const Search = props => {
   const handleOnSubmit = e => {
     e.preventDefault();
     if (input === "") return;
-
     axios
       .post("http://localhost:4000/search", {
         type: type,

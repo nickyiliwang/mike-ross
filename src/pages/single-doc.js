@@ -110,12 +110,3 @@ const SingleDocPage = ({ history, searchResults }) => {
 };
 
 export default withRouter(SingleDocPage);
-
-// Display Settings Dropdown (font size and font family)
-// cite button that copies the text
-// renders p tag
-// show full title button,
-// searchResults comes in as an array of objects, depending on which document the use is looking at. we need to know if the array has something in front of it or behind it
-// x results in front
-// y results in back
-// you are at x

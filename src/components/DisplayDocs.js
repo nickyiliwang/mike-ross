@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DisplaySingleDoc from "./DisplaySingleDoc";
+import SortingResults from "../components/SortingResults";
 
 const DisplayDocs = props => {
   const [searchResults, setSearchResults] = useState([]);
@@ -7,7 +8,16 @@ const DisplayDocs = props => {
   useEffect(() => {
     setSearchResults(props.searchResults);
     renderSingleDocument();
+  }, [props.searchResults]);
+
+  useEffect(() => {
+    setSearchResults(props.searchResults);
+    renderSingleDocument();
   }, [searchResults]);
+
+  const handleSortingResults = data => {
+    setSearchResults(data);
+  };
 
   const renderSingleDocument = () => {
     if (
@@ -23,7 +33,6 @@ const DisplayDocs = props => {
         );
       });
     } else {
-      console.log("no-results");
       return (
         <div className="no-results">
           <p>
@@ -37,6 +46,10 @@ const DisplayDocs = props => {
 
   return (
     <div>
+      <SortingResults
+        searchResults={searchResults}
+        handleSortingResults={handleSortingResults}
+      />
       <ul className="doc-list">{renderSingleDocument()}</ul>
     </div>
   );

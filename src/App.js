@@ -13,7 +13,12 @@ const App = () => {
   const [searchResults, setSearchResults] = useState([]);
 
   const onSearchTermSubmit = res => {
-    setSearchResults(res);
+    const sortedAlphaResults = res.data.documents
+      .slice()
+      .sort((a, b) => a.title.localeCompare(b.title));
+
+    const originalStructure = { data: { documents: sortedAlphaResults } };
+    setSearchResults(originalStructure);
   };
 
   return (
