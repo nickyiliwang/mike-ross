@@ -11,3 +11,7 @@ const sortedActivities = activities.sort(function(a, b) {
 });
 
 console.log(sortedActivities);
+
+
+// sort alpha
+// objs.sort((a, b) => a.last_nom.localeCompare(b.last_nom));

@@ -49,7 +49,7 @@ const Search = props => {
         }
         onSubmit={handleOnSubmit}
       >
-        <textarea
+        <input
           type="text"
           name="text"
           value={input}
@@ -57,7 +57,7 @@ const Search = props => {
           onChange={handleOnInputChange}
           maxLength={200}
           style={{
-            minHeight: `${input.length / 1.5}px`
+            minHeight: `${input.length / 2.7}px`
           }}
         />
 

@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import DisplaySingleDoc from "./DisplaySingleDoc";
 
-const DisplayDocs = ({ searchResults }) => {
+const DisplayDocs = props => {
+  const [searchResults, setSearchResults] = useState([]);
+
+  useEffect(() => {
+    setSearchResults(props.searchResults);
+    renderSingleDocument();
+  }, [searchResults]);
+
   const renderSingleDocument = () => {
-    if (searchResults.documents[0]) {
+    if (
+      searchResults.hasOwnProperty("documents") &&
+      searchResults.documents[0]
+    ) {
       return searchResults.documents.map(doc => {
         const { id, ...restOfDocProps } = doc;
         return (
@@ -13,8 +23,9 @@ const DisplayDocs = ({ searchResults }) => {
         );
       });
     } else {
+      console.log("no-results");
       return (
-        <div className='no-results'>
+        <div className="no-results">
           <p>
             Unfortunately we could not find any results. Please try another
             search.
