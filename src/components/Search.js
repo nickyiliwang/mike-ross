@@ -48,7 +48,7 @@ const Search = props => {
         }
         onSubmit={handleOnSubmit}
       >
-        <input
+        <textarea
           type="text"
           name="text"
           value={input}

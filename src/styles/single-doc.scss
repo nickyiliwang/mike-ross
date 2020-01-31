@@ -73,7 +73,7 @@
     .next-button {
       padding: 5px 25px 5px 10px;
     }
-
+    // https://stackoverflow.com/questions/5768998/how-to-flip-background-image-using-css
     .next-button::before {
       transform: scaleX(-1);
       filter: FlipH;

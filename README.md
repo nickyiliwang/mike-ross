@@ -15,12 +15,7 @@ Dynamic scale input field
   2. it looks nicer/more intuitive with enter to submit
 
 TODO:
-deal with docs without passages/carousel, maybe give a button to go
-Sorting List by date and Alpha
-header go back btn
-no match doc css
 display setting css
-single page css
 responsive
 
 # ROSS Mini Interview Question
