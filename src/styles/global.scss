@@ -38,10 +38,16 @@ button {
     background: #dde5ea;
     border-radius: 4px;
   }
+
+  &:focus {
+    outline: none;
+  }
 }
 button[disabled],
 input[disabled] {
   cursor: default;
+  color: #4f5e64;
+  opacity: 0.3;
   &:hover {
     background: none;
   }

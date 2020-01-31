@@ -8,12 +8,13 @@
   .left-controls {
     display: flex;
     align-items: center;
+    margin-left: 50px;
 
     .citation-button,
     .dropdown-button,
     .vr {
       height: 30px;
-      margin-left: 20px;
+      margin-left: 10px;
     }
 
     .citation-button button {
@@ -27,6 +28,10 @@
         background: #dde5ea;
         border-radius: 4px;
       }
+
+      & img {
+        padding-right: 6px;
+      }
     }
 
     .dropdown-button {
@@ -38,13 +43,41 @@
   .navigate-results {
     display: flex;
     align-items: center;
+    margin-right: 50px;
 
     & * {
       margin-right: 20px;
     }
 
-    button {
-      padding: 5px 20px;
+    .previous-button::before,
+    .next-button::before {
+      content: "";
+      background: url("../icons/arrow.svg");
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 6px;
+      right: 5px;
+      bottom: 0;
+      left: 5px;
+    }
+
+    .previous-button,
+    .next-button {
+      position: relative;
+      font-weight: bold;
+    }
+
+    .previous-button {
+      padding: 5px 10px 5px 25px;
+    }
+    .next-button {
+      padding: 5px 25px 5px 10px;
+    }
+
+    .next-button::before {
+      transform: scaleX(-1);
+      filter: FlipH;
+      -ms-filter: "FlipH";
     }
   }
 
@@ -54,6 +87,7 @@
 }
 
 .single-top-doc {
+  margin-top: 30px;
   text-align: center;
   background: #fafafa;
   padding: 30px 0;
@@ -64,7 +98,7 @@
   }
 
   p {
-    font-size: 12px;
+    font-size: 14px;
     color: #757575;
   }
 
@@ -73,18 +107,20 @@
   }
 }
 
-.single-page-content {
-  background: #ffffff;
-  border-radius: 8px;
-}
-
 .single-passages {
   position: relative;
+  background: #ffffff;
+  border-radius: 8px;
+  padding-bottom: 60px;
+
+  .single-passages-content {
+    padding: 60px 80px 0 80px;
+  }
   .show-full-title {
     border: 1px solid #dde5ea;
     padding: 5px 40px;
     border-radius: 50px;
-    top: -35px;
+    top: -15px;
     position: absolute;
     margin-left: auto;
     margin-right: auto;

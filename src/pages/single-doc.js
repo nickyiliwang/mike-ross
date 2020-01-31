@@ -93,17 +93,27 @@ const SingleDocPage = ({ history, searchResults }) => {
             <CitationButton citation={currentDocData.citation} />
           </div>
           <div className="vr"></div>
-            <Dropdown
-              setFontSizeValue={setFontSizeValue}
-              setFontFamilyValue={setFontFamilyValue}
-            />
+          <Dropdown
+            setFontSizeValue={setFontSizeValue}
+            setFontFamilyValue={setFontFamilyValue}
+          />
         </div>
         <div className="navigate-results">
-          <button disabled={disablePrev} onClick={handleOnClick} value="-">
+          <button
+            className="previous-button"
+            disabled={disablePrev}
+            onClick={handleOnClick}
+            value="-"
+          >
             Previous
           </button>
           <div className="vr"></div>
-          <button disabled={disableNext} onClick={handleOnClick} value="+">
+          <button
+            className="next-button"
+            disabled={disableNext}
+            onClick={handleOnClick}
+            value="+"
+          >
             Next
           </button>
         </div>

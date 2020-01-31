@@ -1,7 +1,20 @@
+.sorting-results {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+
+  select {
+    font-weight: bold;
+    border: none;
+    background: #f2f4f4;
+  }
+}
+
 /* list of documents */
 .list-of-documents {
   background: #ffffff;
   border: 1px solid #dde5ea;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 }
 
@@ -16,7 +29,6 @@
   &:hover {
     cursor: pointer;
   }
-
 }
 
 .meta-text {
@@ -27,11 +39,6 @@
     font-size: 14px;
     color: #757575;
   }
-}
-
-.single-passages-content {
-  max-width: 600px;
-  margin: 18px 0;
 }
 
 // carousel

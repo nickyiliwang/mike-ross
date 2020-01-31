@@ -21,8 +21,9 @@ const SortingResults = ({ searchResults, handleSortingResults }) => {
 
   return (
     <div className="sorting-results">
+      <p>Sorting:</p>
       <select onChange={handleOnChange}>
-        <option value="alpha">Alphabetical</option>
+        <option value="alpha">Alphabetically</option>
         <option value="recent">Recent</option>
       </select>
     </div>
